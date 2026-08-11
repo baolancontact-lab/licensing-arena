@@ -1,0 +1,2 @@
+"use client";import {useEffect,useState} from "react";
+export function Countdown({endsAt,onEnd}:{endsAt:string|null,onEnd?:()=>void}){const [left,setLeft]=useState(0);useEffect(()=>{let fired=false;const tick=()=>{const n=endsAt?Math.max(0,Date.parse(endsAt)-Date.now()):0;setLeft(n);if(!n&&!fired){fired=true;onEnd?.()}};tick();const id=setInterval(tick,100);return()=>clearInterval(id)},[endsAt,onEnd]);return <span>{Math.ceil(left/1000)}</span>}

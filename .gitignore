@@ -1,0 +1,9 @@
+node_modules
+.next
+.env*
+!.env.example
+coverage
+.vercel
+*.log
+supabase/.branches/
+supabase/.temp/

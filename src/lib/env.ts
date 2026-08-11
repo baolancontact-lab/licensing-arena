@@ -1,0 +1,2 @@
+export function publicEnv(){const url=process.env.NEXT_PUBLIC_SUPABASE_URL,key=process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;if(!url||!key) throw new Error("Thiếu cấu hình Supabase public");return{url,key}}
+export function serverEnv(){const secret=process.env.SUPABASE_SECRET_KEY,pin=process.env.ADMIN_PIN;if(!secret||!pin) throw new Error("Thiếu SUPABASE_SECRET_KEY hoặc ADMIN_PIN");return{...publicEnv(),secret,pin}}
